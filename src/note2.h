@@ -3,7 +3,7 @@
 
 #define MAX_NAME_LEN 50
 #define MAX_PHONE_LEN 15
-#define MAX_BLOCK_SIZE 7
+#define BLOCK_SIZE 7
 
 typedef struct {
 	char Name[MAX_NAME_LEN];
