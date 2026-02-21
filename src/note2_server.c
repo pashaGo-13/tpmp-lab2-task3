@@ -29,3 +29,21 @@ void inputNotes(NOTE2 block[]) {
 		getchar();
 	}
 }
+
+// Извлечение первых трех цифр номера
+static int getFirstThreeDigits(const char *phone) {
+	int digits = 0;
+	int count = 0;
+	for (int i = 0; phone[i] != '\0' && count < 3; i++) {
+		if (isdigit(phone[i])) {
+			digits = digits * 10 + (phone[i] - '0');
+			count++;
+		}
+	}
+	
+	while (count < 3) {
+		digits *= 10;
+		count++;
+	}
+	return digits;
+}
