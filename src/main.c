@@ -8,5 +8,17 @@ int main() {
 
 	inputNotes(block);
 	sortByFirstThreeNumberDigits(block);
+	
+	printf("Введите фамилию для поиска: ");
+	fgets(searchSurname, MAX_NAME_LEN, stdin);
+	size_t len = strlen(searchSurname);
+	if (len > 0 && serachSurname[len - 1] == '\n') {
+		searchSurname[len - 1] = '\0';
+	}
+	
+	if (!findAndPrintBySurname(block, searchSurname)) {
+		printf("\nЧеловек с фамилией %s не найден\n", searchSurname);
+	}
 	return 0;
 }
+

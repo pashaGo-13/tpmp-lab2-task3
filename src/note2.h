@@ -15,4 +15,9 @@ typedef struct {
 	} Date;
 } NOTE2;
 
+void inputNotes(NOTE2 block[]);
+void sortByFirstThreeNumberDigits(NOTE2 block[]);
+void printPerson(const NOTE2 *note);
+int findAndPrintBySurname(const NOTE2 block[], const char *surname);
+
 #endif

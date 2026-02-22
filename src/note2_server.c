@@ -61,3 +61,25 @@ void sortByFirstThreeNumberDigits(NOTE2 block[]) {
 		}
 	}
 }
+
+// Вывод информации о человеке
+void printPerson(const NOTE2 *note) {
+	printf("Фамилия и инициалы: %s\n", note->Name);
+	printf("Номер телефона: %s\n", note->TELE);
+	printf("Дата рождения: %04d-%02d-%02d\n", note->Date.year, note->Date.moth, note->Date.day);
+}
+
+// Поиск по фамилии  и вывод
+int  findAndPrintBySurname(const NOTE2 block[], const char *surname) {
+	int found = 0;
+	for (int i = 0; i < BLOCK_SIZE; i++) {
+		if (strncmp(block[i].Name, surname, strlen(surname)) == 0) {
+			if (!found) {
+				printf("\nНайдено:\n");
+				found = 1;
+			}
+			printNote(&block[i]);
+		}
+	}
+	return found;
+}
