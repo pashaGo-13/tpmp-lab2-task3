@@ -10,9 +10,43 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make
+
     - name: Build with Make
       run: make
-    
-    - name: Run the program
-run: ./my_program
 
+    - name: Run the program with test input
+      run: |
+        cat > test_input.txt << EOF
+        Иванов И.И.
+        123-45-67
+        1990 5 15
+        Петров П.П.
+        456-78-90
+        1985 3 20
+        Сидоров С.С.
+        789-12-34
+        1995 8 10
+        Козлов К.К.
+        234-56-78
+        1988 11 25
+        Смирнов А.А.
+        567-89-01
+        1992 2 28
+        Васильев В.В.
+        890-12-34
+        1983 7 5
+        Николаев Н.Н.
+        345-67-89
+        1998 9 30
+        EOF
+        
+        ./note2_program < test_input.txt
+        
+    - name: Check build artifacts
+      run: |
+        ls -la
+        file note2_program
