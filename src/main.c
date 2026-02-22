@@ -7,5 +7,6 @@ int main() {
 	char searchSurname[MAX_NAME_LEN];
 
 	inputNotes(block);
+	sortByFirstThreeNumberDigits(block);
 	return 0;
 }

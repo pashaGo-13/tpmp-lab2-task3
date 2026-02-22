@@ -47,3 +47,17 @@ static int getFirstThreeDigits(const char *phone) {
 	}
 	return digits;
 }
+
+// Сортировка по первым трем цифрам номера
+void sortByFirstThreeNumberDigits(NOTE2 block[]) {
+	for (int i = 0; i < BLOCK_SIZE - 1; i++) {
+		for (int j = 0; j < BLOCK_SIZE - i - 1; j++) {
+			int firstDigits1 = getFirstThreeDigits(block[j].TELE);
+			int firstDigits2 = getFirstThreeDigits(block[j + 1].TELE);
+ 			if (firstDigits1 > firstDigits2) {
+				NOTE2 temp = block[j];
+				block[j] = block[j + 1];
+			}
+		}
+	}
+}
