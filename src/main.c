@@ -12,7 +12,7 @@ int main() {
 	printf("Введите фамилию для поиска: ");
 	fgets(searchSurname, MAX_NAME_LEN, stdin);
 	size_t len = strlen(searchSurname);
-	if (len > 0 && serachSurname[len - 1] == '\n') {
+	if (len > 0 && searchSurname[len - 1] == '\n') {
 		searchSurname[len - 1] = '\0';
 	}
 	

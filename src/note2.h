@@ -1,4 +1,4 @@
-#indef NOTE2_H
+#ifndef NOTE2_H
 #define NOTE2_H
 
 #define MAX_NAME_LEN 50
