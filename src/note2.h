@@ -12,7 +12,7 @@ typedef struct {
 		int year;
 		int month;
 		int day;
-	} Date;
+	} DATE;
 } NOTE2;
 
 void inputNotes(NOTE2 block[]);
