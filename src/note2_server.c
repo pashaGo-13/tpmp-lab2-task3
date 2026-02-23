@@ -66,7 +66,7 @@ void sortByFirstThreeNumberDigits(NOTE2 block[]) {
 void printPerson(const NOTE2 *note) {
 	printf("Фамилия и инициалы: %s\n", note->Name);
 	printf("Номер телефона: %s\n", note->TELE);
-	printf("Дата рождения: %04d-%02d-%02d\n", note->Date.year, note->Date.moth, note->Date.day);
+	printf("Дата рождения: %04d-%02d-%02d\n", note->Date.year, note->Date.month, note->Date.day);
 }
 
 // Поиск по фамилии  и вывод
@@ -78,7 +78,7 @@ int  findAndPrintBySurname(const NOTE2 block[], const char *surname) {
 				printf("\nНайдено:\n");
 				found = 1;
 			}
-			printNote(&block[i]);
+			printPerson(&block[i]);
 		}
 	}
 	return found;
