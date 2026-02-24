@@ -1,3 +1,4 @@
+// pashaGo
 #ifndef NOTE2_H
 #define NOTE2_H
 
