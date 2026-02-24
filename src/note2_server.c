@@ -8,7 +8,7 @@ void inputNotes(NOTE2 block[]) {
 	printf("Введите информацию о %d людях:\n", BLOCK_SIZE);
 	
 	for (int i = 0; i < BLOCK_SIZE; ++i) {
-		printf("Запись №%d", i + 1);
+		printf("\nЗапись №%d\n", i + 1);
 		
 		printf("Введите фамилию и инициалы: ");
 		fgets(block[i].Name, MAX_NAME_LEN, stdin);
@@ -35,7 +35,7 @@ static int getFirstThreeDigits(const char *phone) {
 	int digits = 0;
 	int count = 0;
 	for (int i = 0; phone[i] != '\0' && count < 3; i++) {
-		if (isdigit(phone[i])) {
+		if (isdigit((unsigned char)phone[i])) {
 			digits = digits * 10 + (phone[i] - '0');
 			count++;
 		}
@@ -57,6 +57,7 @@ void sortByFirstThreeNumberDigits(NOTE2 block[]) {
  			if (firstDigits1 > firstDigits2) {
 				NOTE2 temp = block[j];
 				block[j] = block[j + 1];
+				block[j + 1] = temp;
 			}
 		}
 	}
@@ -66,11 +67,11 @@ void sortByFirstThreeNumberDigits(NOTE2 block[]) {
 void printPerson(const NOTE2 *note) {
 	printf("Фамилия и инициалы: %s\n", note->Name);
 	printf("Номер телефона: %s\n", note->TELE);
-	printf("Дата рождения: %04d-%02d-%02d\n", note->Date.year, note->Date.month, note->Date.day);
+	printf("Дата рождения: %04d-%02d-%02d\n", note->DATE.year, note->DATE.month, note->DATE.day);
 }
 
-// Поиск по фамилии  и вывод
-int  findAndPrintBySurname(const NOTE2 block[], const char *surname) {
+// Поиск по фамилии и вывод
+int findAndPrintBySurname(const NOTE2 block[], const char *surname) {
 	int found = 0;
 	for (int i = 0; i < BLOCK_SIZE; i++) {
 		if (strncmp(block[i].Name, surname, strlen(surname)) == 0) {
