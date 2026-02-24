@@ -20,7 +20,7 @@ jobs:
 
     - name: Run the program with test input
       run: |
-        cat > test_input.txt << EOF
+        cat > test_input.txt << 'EOF'
         Иванов И.И.
         123-45-67
         1990 5 15
@@ -42,6 +42,7 @@ jobs:
         Николаев Н.Н.
         345-67-89
         1998 9 30
+        Иванов
         EOF
         
         ./note2_program < test_input.txt
