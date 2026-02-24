@@ -17,5 +17,5 @@ jobs:
       run: make
 
     - name: Run the program
-      run: ./note2_server
+      run: ./note2_program
      
